@@ -87,9 +87,9 @@ export default function TailwindIntegration() {
 
             {showButton && (
                 <>
-                {/* <div className="mt-16">
+                <div className="mt-16">
                     <Link to={routes.tailwindconsumer} className="next-button">What Website Uses TailwindCSS?</Link>
-                </div> */}
+                </div>
                 <a
                     href="https://tailwindcss.com/docs/installation/framework-guides"
                     target="_blank"
