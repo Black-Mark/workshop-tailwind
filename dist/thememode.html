@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tailwind Dark Mode Demo</title>
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
+    <div class="p-4">
+        <button onclick="toggleDarkMode()" class="p-2 bg-gray-300 dark:bg-gray-700 rounded">
+            Toggle Dark Mode
+        </button>
+
+        <h1 class="text-2xl font-bold mt-4">Hello, Tailwind!</h1>
+        <p class="mt-2">Dark mode with Tailwind is easy!</p>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body>
+</html>
